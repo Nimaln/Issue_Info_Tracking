@@ -3,7 +3,8 @@ const express = require('express');
 let router = express.Router();
 
 const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://MyMongoDBUser:MongoDB@mongodbtrial-clevk.mongodb.net/test?retryWrites=true/";
+//const uri = "mongodb+srv://MyMongoDBUser:MongoDB@mongodbtrial-clevk.mongodb.net/test?retryWrites=true/";
+var uri = process.env.MONGODB_URI;
 const client = new MongoClient(uri, { useNewUrlParser: true });
 client.connect(err => {
   const collection = client.db("trial").collection("markup");
