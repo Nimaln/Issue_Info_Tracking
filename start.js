@@ -2,7 +2,7 @@ const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 
-const PORT = process.env.PORT || port;
+const PORT = process.env.PORT || 3000;
 const config = require('./config');
 if (config.credentials.client_id == null || config.credentials.client_secret == null) {
     console.error('Missing FORGE_CLIENT_ID or FORGE_CLIENT_SECRET env. variables.');
@@ -19,7 +19,7 @@ app.use(express.json({ limit: '50mb' }));
 app.use('/api/forge/oauth', require('./routes/oauth'));
 app.use('/api/forge/oss', require('./routes/oss'));
 app.use('/api/forge/modelderivative', require('./routes/modelderivative'));
-app.use('/',require('./routes/mongo'));
+//app.use('/',require('./routes/mongo'));
 app.use((err, req, res, next) => {
     console.error(err);
     res.status(err.statusCode).json(err);
