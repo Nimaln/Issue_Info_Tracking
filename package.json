@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^3.3.5",
+    "bootstrap": "^3.4.1",
     "express": "^4.16.4",
     "forge-apis": "^0.4.4",
     "heroku": "^7.19.4",
